@@ -13,6 +13,7 @@ public class DragNDrop {
     void dragAndDropTest() {
         open("https://the-internet.herokuapp.com");
         $("#content").$$("a").findBy(text("Drag and Drop")).click();
+        $("[id=column-a]").$("header").shouldHave(text("A"));
         $("[id=column-a]").dragAndDropTo("[id=column-b]");
         $("[id=column-a]").$("header").shouldHave(text("B"));
 

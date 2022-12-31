@@ -17,13 +17,15 @@ public class RegistrationFormTest {
     @BeforeAll
     static void beforeAll(){
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1800x1100";
+        Configuration.browserSize = "1920x1050";
     }
 
 
     @Test
     void successfullRegistrationTest()  {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         $("#firstName").setValue("Test");
         $("#lastName").setValue("Test");

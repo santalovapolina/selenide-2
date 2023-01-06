@@ -16,13 +16,13 @@ public class RegistrationFormTest {
     @BeforeAll
     static void beforeAll(){
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1050";
+        Configuration.browserSize = "1920x1080";
 
     }
 
 
     @Test
-    void successfullRegistrationTest() {
+    void successfulRegistrationTest() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");

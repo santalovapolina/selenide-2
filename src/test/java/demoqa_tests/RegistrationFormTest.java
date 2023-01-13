@@ -1,4 +1,4 @@
-package demoqa;
+package demoqa_tests;
 
 import com.codeborne.selenide.Configuration;
 

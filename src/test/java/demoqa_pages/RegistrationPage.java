@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import demoqa_pages.components.CalendarComponent;
 import demoqa_pages.components.RegistrationResultsModal;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -89,8 +91,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage uploadPicture() {
-        uploadPicture.uploadFromClasspath("pol.jpg");
+    public RegistrationPage uploadPicture(String value) {
+        uploadPicture.uploadFromClasspath(value);
         return this;
     }
 

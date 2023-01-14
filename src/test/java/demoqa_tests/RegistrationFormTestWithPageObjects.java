@@ -2,6 +2,8 @@ package demoqa_tests;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 public class RegistrationFormTestWithPageObjects extends TestBase {
 
 
@@ -20,6 +22,7 @@ public class RegistrationFormTestWithPageObjects extends TestBase {
         String userSubject2 = "Computer Science";
         String userHobby1 = "Sports";
         String userHobby2 = "Music";
+        String userPicture = "pol.jpg";
         String userAddress = "Some address";
         String userState = "NCR";
         String userCity = "Delhi";
@@ -34,14 +37,21 @@ public class RegistrationFormTestWithPageObjects extends TestBase {
                 .setBirthDate(birthDay, birthMonth, birthYear)
                 .setSubjects(userSubject1, userSubject2)
                 .setHobbies(userHobby1, userHobby2)
-                .uploadPicture()
+                .uploadPicture(userPicture)
                 .setAddress(userAddress)
                 .setStateAndCity(userState, userCity)
                 .submitForm()
                 .verifyResultModalAppears()
-                .verifyResults("Student Name",firstName + " " + lastName)
-                .verifyResults("Student Email",userEmail)
-                .verifyResults("Mobile",userNumber);
+                .verifyResults("Student Name", firstName + " " + lastName)
+                .verifyResults("Student Email", userEmail)
+                .verifyResults("Gender", userGender)
+                .verifyResults("Mobile", userNumber)
+                .verifyResults("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
+                .verifyResults("Subjects", userSubject1 + ",  " + userSubject2)
+                .verifyResults("Hobbies", userHobby1 + ", " + userHobby2)
+                .verifyResults("Picture", userPicture)
+                .verifyResults("Address", userAddress)
+                .verifyResults("State and City", userState + " " + userCity);
 
 
 

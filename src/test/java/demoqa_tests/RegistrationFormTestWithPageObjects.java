@@ -2,8 +2,6 @@ package demoqa_tests;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 public class RegistrationFormTestWithPageObjects extends TestBase {
 
 
@@ -47,7 +45,7 @@ public class RegistrationFormTestWithPageObjects extends TestBase {
                 .verifyResults("Gender", userGender)
                 .verifyResults("Mobile", userNumber)
                 .verifyResults("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
-                .verifyResults("Subjects", userSubject1 + ",  " + userSubject2)
+                .verifyResults("Subjects", userSubject1 + ", " + userSubject2)
                 .verifyResults("Hobbies", userHobby1 + ", " + userHobby2)
                 .verifyResults("Picture", userPicture)
                 .verifyResults("Address", userAddress)

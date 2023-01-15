@@ -2,8 +2,6 @@ package demoqa_tests;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 public class RegistrationFormTestWithPageObjects extends TestBase {
 
 

@@ -1,44 +1,50 @@
 package demoqa_tests;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
+
 public class RegistrationFormTestWithPageObjects extends TestBase {
+    Faker faker = new Faker();
 
 
     @Test
     void successfulRegistrationTest() {
 
-        String firstName = "Test";
-        String lastName = "Test";
-        String userEmail = "test@test.com";
-        String userGender = "Other";
-        String userNumber = "1234567890";
-        String birthMonth = "January";
-        String birthYear = "1993";
-        String birthDay = "06";
-        String userSubject1 = "Maths";
-        String userSubject2 = "Computer Science";
-        String userHobby1 = "Sports";
-        String userHobby2 = "Music";
-        String userPicture = "pol.jpg";
-        String userAddress = "Some address";
-        String userState = "NCR";
-        String userCity = "Delhi";
+        String firstName = faker.name().firstName(),
+                lastName = faker.name().lastName(),
+                userEmail = faker.internet().emailAddress(),
+                userAddress = faker.address().streetAddress(),
+                userNumber = faker.number().digits(10),
+                userSubject1 = "Computer science",
+                userSubject2 = "Maths",
+                userGender = "Other",
+                birthMonth = "January",
+                birthYear = "1993",
+                birthDay = "06",
+                userHobby1 = "Sports",
+                userHobby2 = "Music",
+                userPicture = "pol.jpg",
+                userState = "NCR",
+                userCity = "Delhi";
 
 
         registrationPage.openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setUserEmail(userEmail)
+
                 .setGender(userGender)
-                .setPhoneNumber(userNumber)
                 .setBirthDate(birthDay, birthMonth, birthYear)
                 .setSubjects(userSubject1, userSubject2)
                 .setHobbies(userHobby1, userHobby2)
                 .uploadPicture(userPicture)
-                .setAddress(userAddress)
                 .setStateAndCity(userState, userCity)
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(userEmail)
+                .setPhoneNumber(userNumber)
+                .setAddress(userAddress)
                 .submitForm()
+
+
                 .verifyResultModalAppears()
                 .verifyResults("Student Name", firstName + " " + lastName)
                 .verifyResults("Student Email", userEmail)
@@ -50,7 +56,6 @@ public class RegistrationFormTestWithPageObjects extends TestBase {
                 .verifyResults("Picture", userPicture)
                 .verifyResults("Address", userAddress)
                 .verifyResults("State and City", userState + " " + userCity);
-
 
 
     }

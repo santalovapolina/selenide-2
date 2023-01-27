@@ -5,13 +5,13 @@ plugins {
 
 allure {
     report {
-        version.set("2.20.1") // Allure Report (https://github.com/allure-framework/allure2)
+        version.set("2.20.1") 
     }
     adapter {
-        aspectjWeaver.set(true) // обработка аннотации @Step
+        aspectjWeaver.set(true) 
         frameworks {
             junit5 {
-                adapterVersion.set("2.20.1") // Allure JUnit5 (https://github.com/allure-framework/allure-java)
+                adapterVersion.set("2.20.1") 
             }
         }
     }

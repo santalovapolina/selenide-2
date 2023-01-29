@@ -5,13 +5,13 @@ plugins {
 
 allure {
     report {
-        version.set("2.20.1") // Allure Report (https://github.com/allure-framework/allure2)
+        version.set('2.20.1') // Allure Report (https://github.com/allure-framework/allure2)
     }
     adapter {
         aspectjWeaver.set(true) // обработка аннотации @Step
         frameworks {
             junit5 {
-                adapterVersion.set("2.20.1") // Allure JUnit5 (https://github.com/allure-framework/allure-java)
+                adapterVersion.set('2.20.1') // Allure JUnit5 (https://github.com/allure-framework/allure-java)
             }
         }
     }
@@ -27,10 +27,10 @@ compileTestJava {
 
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:6.10.3",
-            "org.junit.jupiter:junit-jupiter:5.9.1",
-            "com.github.javafaker:javafaker:0.12",
-            "org.slf4j:slf4j-simple:2.0.6",
+            'com.codeborne:selenide:6.10.3',
+            'org.junit.jupiter:junit-jupiter:5.9.1',
+            'com.github.javafaker:javafaker:0.12',
+            'org.slf4j:slf4j-simple:2.0.6',
             'io.qameta.allure:allure-selenide:2.17.3',
     )
 }
@@ -39,3 +39,4 @@ test {
     useJUnitPlatform {
     }
 }
+

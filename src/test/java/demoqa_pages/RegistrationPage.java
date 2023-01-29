@@ -3,6 +3,7 @@ package demoqa_pages;
 import com.codeborne.selenide.SelenideElement;
 import demoqa_pages.components.CalendarComponent;
 import demoqa_pages.components.RegistrationResultsModal;
+import io.qameta.allure.Step;
 
 import java.io.File;
 
@@ -16,25 +17,26 @@ public class RegistrationPage {
     RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
     private final String FORM_TITLE = "Student Registration Form";
     private SelenideElement
-            firstNameInput = $("#firstName"),
-            lastNameInput = $("#lastName"),
-            userEmailInput = $("#userEmail"),
-            userGender = $("#genterWrapper"),
-            userPhoneInput = $("#userNumber"),
 
-            birthDateInput = $("#dateOfBirthInput"),
+    firstNameInput = $("#firstName"),
+    lastNameInput = $("#lastName"),
+    userEmailInput = $("#userEmail"),
+    userGender = $("#genterWrapper"),
+    userPhoneInput = $("#userNumber"),
 
-            subjectsInput = $("#subjectsInput"),
+    birthDateInput = $("#dateOfBirthInput"),
 
-            hobbiesCheckbox = $("#hobbiesWrapper"),
-            uploadPicture = $("#uploadPicture"),
-            addressInput = $("#currentAddress"),
+    subjectsInput = $("#subjectsInput"),
 
-            stateDropdown = $("#state"),
+    hobbiesCheckbox = $("#hobbiesWrapper"),
+    uploadPicture = $("#uploadPicture"),
+    addressInput = $("#currentAddress"),
 
-            cityDropdown = $("#city"),
+    stateDropdown = $("#state"),
 
-            submitButton = $("#submit");
+    cityDropdown = $("#city"),
+
+    submitButton = $("#submit");
 
 
     public RegistrationPage openPage() {
@@ -46,31 +48,37 @@ public class RegistrationPage {
         return this;
     }
 
+
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
         return this;
 
     }
 
+
     public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
         return this;
     }
+
 
     public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
         return this;
     }
 
+
     public RegistrationPage setGender(String value) {
         userGender.$(byText(value)).click();
         return this;
     }
 
+
     public RegistrationPage setPhoneNumber(String value) {
         userPhoneInput.setValue(value);
         return this;
     }
+
 
     public RegistrationPage setBirthDate(String day, String month, String year) {
         birthDateInput.click();
@@ -85,21 +93,24 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setHobbies(String hobby1, String hobby2) {
-        hobbiesCheckbox.$(byText(hobby1)).click();
-        hobbiesCheckbox.$(byText(hobby2)).click();
+
+    public RegistrationPage setHobbies(String hobby) {
+        hobbiesCheckbox.$(byText(hobby)).click();
         return this;
     }
+
 
     public RegistrationPage uploadPicture(String value) {
         uploadPicture.uploadFromClasspath(value);
         return this;
     }
 
+
     public RegistrationPage setAddress(String value) {
         addressInput.setValue(value);
         return this;
     }
+
 
     public RegistrationPage setStateAndCity(String state, String city) {
         stateDropdown.click();
@@ -109,15 +120,18 @@ public class RegistrationPage {
         return this;
     }
 
+
     public RegistrationPage submitForm() {
         submitButton.click();
         return this;
     }
 
+
     public RegistrationPage verifyResultModalAppears() {
         registrationResultsModal.verifyModalAppears();
         return this;
     }
+
 
     public RegistrationPage verifyResults(String key, String value) {
         registrationResultsModal.verifyResults(key, value);

@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jan 27 11:06:01 GMT+07:00 2023","Fri Jan 27 11:06:10 GMT+07:00 2023","8095","","github.SearchTestsWithAllure","","github.SearchTestsWithAllure","checkIssueThruLambdaStep","checkIssueThruLambdaStep()",""
+"broken","Fri Jan 27 10:54:15 GMT+07:00 2023","Fri Jan 27 10:54:19 GMT+07:00 2023","3952","","dragndrop.DragNDrop","","dragndrop.DragNDrop","dragAndDropTest","dragAndDropTest()",""
+"passed","Fri Jan 27 09:35:51 GMT+07:00 2023","Fri Jan 27 09:36:01 GMT+07:00 2023","10244","","github.SearchTestsWithAllure","","github.SearchTestsWithAllure","checkIssueWithListener","checkIssueWithListener()",""
+"failed","Fri Jan 27 10:54:04 GMT+07:00 2023","Fri Jan 27 10:54:15 GMT+07:00 2023","11259","","demoqa_tests.RegistrationFormTestWithPageObjects","","demoqa_tests.RegistrationFormTestWithPageObjects","successfulRegistrationTest","successfulRegistrationTest()",""
+"passed","Fri Jan 27 11:51:20 GMT+07:00 2023","Fri Jan 27 11:51:31 GMT+07:00 2023","10596","","github.SearchTestsWithAllure","","github.SearchTestsWithAllure","chechIssueWithAnnotatedSteps","chechIssueWithAnnotatedSteps()",""
+"failed","Fri Jan 27 10:53:51 GMT+07:00 2023","Fri Jan 27 10:54:03 GMT+07:00 2023","12141","","demoqa_tests.RegistrationFormTest","","demoqa_tests.RegistrationFormTest","successfulRegistrationTest","successfulRegistrationTest()",""

@@ -17,10 +17,10 @@ public class TestBase {
     static void beforeAll() {
         
        Configuration.baseUrl = "https://demoqa.com";
-//        Configuration.browserSize = System.getProperty("browserSize");
-//        Configuration.browser = System.getProperty("browser");
-//        Configuration.browserVersion = System.getProperty("browserVersion");
-//        Configuration.remote = System.getProperty("remote");
+       Configuration.browserSize = System.getProperty("browserSize");
+       Configuration.browser = System.getProperty("browser");
+       Configuration.browserVersion = System.getProperty("browserVersion");
+       Configuration.remote = System.getProperty("remote");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
